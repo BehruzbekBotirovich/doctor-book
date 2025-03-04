@@ -1,36 +1,37 @@
 <script setup>
-import {computed, h, ref} from 'vue'
-import {useI18n} from 'vue-i18n'
-import {useRoute, useRouter} from 'vue-router'
+import { computed, h, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useRoute, useRouter } from 'vue-router'
 import IconChevronLeftDouble from '@/components/icons/IconChevronLeftDouble.vue'
 import IconChevronRightDouble from '@/components/icons/IconChevronRightDouble.vue'
 import navigations from '@/routers/navigations.js'
 import useCore from '@/store/core.pinia.js'
-import {storeToRefs} from 'pinia'
+import { storeToRefs } from 'pinia'
 
-const {t} = useI18n()
+const { t } = useI18n()
 
 const route = useRoute()
 const router = useRouter()
 
 const coreStore = useCore()
 
-const {collapsed} = storeToRefs(coreStore)
+const { collapsed } = storeToRefs(coreStore)
 
 const menuList = navigations
-    .filter((item) => item.meta.showMenu)
-    .map((item) => ({
-      label: t(`menu.${item.name}`),
-      name: item.name,
-      icon: item.meta.icon,
-      key: item.path
-    }))
+  .filter((item) => item.meta.showMenu)
+  .map((item) => ({
+    // label: t(`menu.${item.name}`),
+    label: item.name,
+    name: item.name,
+    icon: item.meta.icon,
+    key: item.path
+  }))
 
 const selectedKeys = computed(() => [
   route.fullPath.split('/')[2].split('?')[0]
 ])
 
-function navigate({item}) {
+function navigate({ item }) {
   let query = {}
   if (route.fullPath.split('/')[2] === item.key) {
     query = route.query
@@ -43,33 +44,9 @@ function navigate({item}) {
 </script>
 
 <template>
-  <div class="h-full p-2 bg-white rounded-[16px]">
-    <div
-        class="flex items-center"
-        :class="[collapsed ? 'justify-center' : 'justify-between']"
-    >
-      <div v-if="!collapsed">
-        <h1 class="font-medium text-sm m-0 px-2 uppercase text-muted">Menu</h1>
-      </div>
-      <div>
-        <a-button @click="coreStore.changeCollapsed()" type="text">
-          <template #icon>
-            <IconChevronRightDouble v-if="collapsed" class="text-2xl"/>
-            <IconChevronLeftDouble v-else class="text-2xl"/>
-          </template>
-        </a-button>
-      </div>
-    </div>
-    <div class="flex flex-col gap-[2px] w-full menu">
-      <a-menu
-          @click="navigate"
-          :selected-keys="selectedKeys"
-          :items="menuList"
-          :inline-collapsed="collapsed"
-          mode="inline"
-          class="ant-menu-custom-class"
-      />
-    </div>
+  <div class="flex flex-col gap-[2px] w-full menu">
+    <a-menu @click="navigate" :selected-keys="selectedKeys" :items="menuList" mode="horizontal"
+      class="ant-menu-custom-class w-full" />
   </div>
 </template>
 
@@ -93,8 +70,8 @@ function navigate({item}) {
   }
 
   &:deep(.ant-menu-item-selected) {
-    background: $primary;
-    color: #fff;
+    // background: $primary;
+    // color: #fff;
   }
 }
 

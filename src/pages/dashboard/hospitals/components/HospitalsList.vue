@@ -1,9 +1,11 @@
 <template>
-    homepage
+    list
 </template>
 
-<script setup>
+<script>
+export default {
 
+}
 </script>
 
 <style></style>

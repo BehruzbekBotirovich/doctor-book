@@ -23,9 +23,9 @@ onMounted(() => {
       <div class="w-screen h-screen flex flex-col">
         <dashboard-header-component/>
         <div class="h-full flex justify-between gap-4 pr-4 md:pl-4">
-          <div class="my-4">
+          <!-- <div class="my-4">
             <dashboard-menu-component class="hidden md:block lg:block "/>
-          </div>
+          </div> -->
           <div class="overflow-y-auto flex-grow py-4">
             <router-view/>
           </div>

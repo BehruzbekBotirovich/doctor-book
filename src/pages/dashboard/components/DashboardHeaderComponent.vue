@@ -13,6 +13,7 @@ import IconNotification from '@/components/icons/IconNotification.vue'
 import IconTranslate from '@/components/icons/IconTranslate.vue'
 import IconSettings from '@/components/icons/IconSettings.vue'
 import IconLogOut from '@/components/icons/IconLogOut.vue'
+import DashboardMenuComponent from './DashboardMenuComponent.vue'
 
 const coreStore = useCore()
 const userStore = useUser()
@@ -31,11 +32,23 @@ const langObj = ref({
 </script>
 
 <template>
-  <div class="dashboard-header w-full flex justify-end bg-white px-4 py-2">
-    <div class="w-full flex justify-between items-center gap-2">
-      <div class="">
-        <img width="120" src="@/assets/images/logo_2.svg" alt="logo" />
+  <div class="dashboard-header w-full flex justify-end bg-white px-14  py-2">
+    <div class="w-full flex justify-between items-center">
+      <div class="flex  gap-2 items-center">
+        <!-- <img src="@/assets/images/logo.svg" alt=""> -->
+        <div>
+          <p class="text-sm font-medium text-muted m-0 leading-[16px]">
+            Your location
+          </p>
+          <h3 class="text-primaryDark ">Tashkent, Yunusobod</h3>
+        </div>
+        <icon-location />
       </div>
+
+      <div class="self-center">
+        <dashboard-menu-component />
+      </div>
+
       <div class="flex items-center gap-10">
         <a-dropdown trigger="click">
           <header-user-component :user="user" />
@@ -71,16 +84,6 @@ const langObj = ref({
             </a-menu>
           </template>
         </a-dropdown>
-
-        <div class="flex  gap-2 items-center">
-          <div>
-            <p class="text-sm font-medium text-muted m-0 leading-[16px]">
-              Your location
-            </p>
-            <h3 class="text-primaryDark ">Tashkent, Yunusobod</h3>
-          </div>
-          <icon-location />
-        </div>
       </div>
     </div>
   </div>

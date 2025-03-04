@@ -1,9 +1,11 @@
 <template>
-    homepage
+    profile
 </template>
 
-<script setup>
+<script>
+export default {
 
+}
 </script>
 
 <style></style>

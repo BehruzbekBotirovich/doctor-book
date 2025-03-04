@@ -214,11 +214,14 @@
 
 .ant-menu-custom-class {
   border-inline-end: none !important;
-  width: 270px !important;
 
+  width: 660px !important;
   .ant-menu-item {
-    padding-left: 13px !important;
-    background-color: rgb($muted, 0.07);
+    font-size: 18px;
+    padding: 6px 12px;
+    margin-left: 10px;
+    // padding-left: 13px !important;
+    // background-color: rgb($muted, 0.07);
   }
 }
 

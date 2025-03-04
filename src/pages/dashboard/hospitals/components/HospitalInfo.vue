@@ -1,9 +1,11 @@
 <template>
-    homepage
+    info
 </template>
 
-<script setup>
+<script>
+export default {
 
+}
 </script>
 
 <style></style>
