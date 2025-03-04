@@ -5,9 +5,12 @@ import { useValidator } from '@/composables/index.js'
 import useAuth from '@/store/auth.pinia.js'
 import useCore from '@/store/core.pinia.js'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const { requiredField, phoneNumberValidator } = useValidator()
-const {t} = useI18n()
+const { t } = useI18n()
 const coreStore = useCore()
 const authStore = useAuth()
 
@@ -25,8 +28,9 @@ function submitForm() {
     formRef.value
         .validate()
         .then((valid) => {
-            const data = { ...form, username: reformatPhoneNumber(form.username) }
-            authStore.loginWithPassword(data)
+            router.push('/dashboard')
+            // const data = { ...form, username: reformatPhoneNumber(form.username) }
+            // authStore.loginWithPassword(data)
         })
         .catch(() => { })
 }
@@ -66,7 +70,7 @@ function submitForm() {
             <span class="">Agar akkauntingiz bo‘lmasa</span>
             <router-link to="/auth/register" class="text-primary underline text-base">Ro'yhatdan o'tish</router-link>
         </div>
-    
+
 
     </a-card>
 </template>

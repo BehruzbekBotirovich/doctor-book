@@ -11,7 +11,6 @@ import useCore from '@/store/core.pinia.js'
 
 const { t } = useI18n()
 const { requiredField, phoneNumberValidator } = useValidator()
-const { getChallenge } = useEimzoApi(import.meta.env.VITE_APP_BASE_URL)
 
 const coreStore = useCore()
 const authStore = useAuth()

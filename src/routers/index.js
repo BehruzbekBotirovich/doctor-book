@@ -60,26 +60,26 @@ export const router = createRouter({
 })
 
 const routerFactory = (i18n) => {
-  router.beforeEach((to, from, next) => {
-    // document.title = i18n.t(`menu.${to.name}`)
-    document.title = to.name  
+  // router.beforeEach((to, from, next) => {
+  //   // document.title = i18n.t(`menu.${to.name}`)
+  //   document.title = to.name  
 
-    const accessToken = localStorage.getItem('access_token')
-    if (accessToken) {
-      if (to.path.includes('dashboard')) {
-        return next()
-      } else {
-        return next({ name: 'DashboardView' })
-      }
-    } else {
-      if (!to.path.includes('dashboard')) {
-        return next()
-      } else {
-        return next({ name: 'AuthView' })
-      }
-    }
-    return next()
-  })
+  //   const accessToken = localStorage.getItem('access_token')
+  //   if (accessToken) {
+  //     if (to.path.includes('dashboard')) {
+  //       return next()
+  //     } else {
+  //       return next({ name: 'DashboardView' })
+  //     }
+  //   } else {
+  //     if (!to.path.includes('dashboard')) {
+  //       return next()
+  //     } else {
+  //       return next({ name: 'AuthView' })
+  //     }
+  //   }
+  //   return next()
+  // })
   return router
 }
 
