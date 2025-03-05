@@ -9,7 +9,8 @@ import AuthLoginView from '../pages/auth/login/AuthLoginView.vue'
 
 const AuthView = () => import('@/pages/auth/AuthView.vue')
 
-const accessNavigation = navigations.filter((item) => item.meta.showMenu)
+// const accessNavigation = navigations.filter((item) => item.meta.showMenu)
+const accessNavigation = navigations
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

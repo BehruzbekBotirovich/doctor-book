@@ -2,16 +2,16 @@
     <div class="py-4">
 
         <a-carousel dot-position="bottom" class="custom-carousel ">
-            <a-carousel-item v-for="(slide, index) in slides" :key="index">
+            <div v-for="(slide, index) in slides" :key="index">
                 <div class="carousel-slide relative" :style="{ backgroundImage: `url(${slide.img})` }">
                     <div class="carousel-content space-y-4 md:space-y-6 lg:space-y-10 ">
                         <h1 class="text-lg md:text-3xl  lg:text-5xl font-bold">{{ slide.title }}</h1>
                         <p class="text-sm lg:text-base ">{{ slide.subtitle }}</p>
-                        <a-button type="primary" class="carousel-button">Batafsil</a-button>
+                        <a-button type="primary" class="carousel-button">   More</a-button>
                     </div>
                     <div class="cover-darking"> </div>
                 </div>
-            </a-carousel-item>
+            </div>
         </a-carousel>
     </div>
 

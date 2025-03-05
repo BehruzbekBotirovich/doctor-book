@@ -2,10 +2,10 @@ import { h } from 'vue'
 // views
 import DoctorsPage from '@/pages/dashboard/doctors/DoctorsPage.vue'
 import HomePage from '@/pages/dashboard/home/HomePage.vue'
-import AppointmentsPage from '../pages/dashboard/appointments/AppointmentsPage.vue'
+import AppointmentsPage from '@/pages/dashboard/appointments/AppointmentsPage.vue'
 import HospitalsPage from '@/pages/dashboard/hospitals/HospitalsPage.vue'
-import ProfilePage from '../pages/dashboard/profile/ProfilePage.vue'
-
+import ProfilePage from '@/pages/dashboard/profile/ProfilePage.vue'
+import SpecialitiesPage from '@/pages/dashboard/specialities/SpecialitiesPage.vue'
 // icons
 import IconDoctor from '@/components/icons/IconDoctor.vue'
 import IconHome from '@/components/icons/IconHome.vue'
@@ -93,6 +93,15 @@ const navigations = [
       showMenu: true,
       icon: () => h(IconProfile)
     },
+  },
+
+  {
+    path: 'specialities',
+    name: 'Specialities',
+    component: SpecialitiesPage,
+    meta: {
+      showMenu: false,
+    }
   },
 
 ]

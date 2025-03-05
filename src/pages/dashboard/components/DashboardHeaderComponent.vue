@@ -35,12 +35,14 @@ const langObj = ref({
   <div class="dashboard-header w-full flex justify-end bg-white px-14  py-2">
     <div class="w-full flex justify-between items-center">
       <div class="flex  gap-2 items-center">
-        <!-- <img src="@/assets/images/logo.svg" alt=""> -->
+        <router-link to="/dashboard">
+          <img class="w-20 mr-2" src="@/assets/images/logo_2.svg" alt="">
+        </router-link>
         <div>
           <p class="text-sm font-medium text-muted m-0 leading-[16px]">
             Your location
           </p>
-          <h3 class="text-primaryDark ">Tashkent, Yunusobod</h3>
+          <h3 class="text-primaryDark  mb-0 truncate w-[160px]">Tashkent, Yunusobod</h3>
         </div>
         <icon-location />
       </div>

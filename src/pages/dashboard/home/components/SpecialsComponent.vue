@@ -1,7 +1,9 @@
 <template>
     <div class="flex justify-between mt-4 md:mt-6 lg:mt-10 mb-3  md:mb-4 lg:mb-6">
         <h3 class="text-lg md:text-xl lg:text-2xl font-semibold ">Top Specialties</h3>
-        <div class="text-primary"> View all</div>
+        <div class="text-primary">
+            <router-link to="/dashboard/specialities">View all</router-link>
+        </div>
     </div>
     <a-row :gutter="[40, 40]">
         <a-col v-for="item in Specialties" :key="item.index" :xs="6" :lg="4">
