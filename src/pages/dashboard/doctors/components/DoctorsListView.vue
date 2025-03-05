@@ -6,9 +6,9 @@
                 @search="onSearch" />
         </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <DoctorCard :data="doctorsStore.doctors" />
-    </div>
+
+    <DoctorCard :data="doctorsStore.doctors" />
+
 
 </template>
 
