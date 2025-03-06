@@ -20,6 +20,7 @@ const useUser = defineStore('User', {
         username: 'dev',
         role: "DEV",
         pinfl: null,
+        phone:'+998 99 000 11 22',
         fullName: "Developiriddin",
         status: {
           key: "ACTIVE",

@@ -3,7 +3,6 @@
         <a-card v-for="doctor in data" :key="doctor.name" class="shadow-lg rounded-xl" hoverable>
             <router-link :to="`/dashboard/doctors/${doctor.id}`">
                 <div class="flex gap-6">
-                    <!-- Фото доктора -->
                     <div class="w-1/3 overflow-hidden rounded-md">
                         <img src="@/assets/images/for_remove/doctor1.jpg" alt="Doctor" class="object-cover h-full" />
                     </div>
@@ -20,13 +19,11 @@
                                 </div>
                             </div>
 
-                            <!-- Рейтинг -->
                             <div class="text-center">
                                 <StarFilled class="yellow-icon text-lg" />
                                 <p class="text-gray-700">{{ doctor.rating }}</p>
                             </div>
                         </div>
-                        <!-- Стоимость консультации -->
                         <div class="mt-1 border-t pt-1 flex justify-between items-center">
                             <div class="text-blue-600 font-semibold">Consulting Fee</div>
                             <div class="text-blue-600 font-bold">{{ doctor.currency }} {{ doctor.fee }}</div>
